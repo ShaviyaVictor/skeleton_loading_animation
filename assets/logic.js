@@ -1,9 +1,8 @@
 const grid = document.querySelector('.grid');
 var cardTemplate = document.getElementById('card-template');
-// var item = cardTemplate.contentEditable.cloneNode(true)
 
 for (let i = 0; i < 10; i++) {
-  grid.append(cardTemplate.contentEditable.cloneNode(true))
+  grid.append(cardTemplate.content.cloneNode)
 }
 
 fetch("https://jsonplaceholder.typicode.com/posts")
@@ -11,7 +10,7 @@ fetch("https://jsonplaceholder.typicode.com/posts")
   .then(posts => {
     grid.innerHTML = ''
     posts.forEach(post => {
-      const div = cardTemplate.contentEditable.cloneNode(true)
+      const div = cardTemplate.content.cloneNode(true)
       div.querySelector('[data-title]').textContent = post.title
       div.querySelector('[data-body]').textContent = post.body
 
